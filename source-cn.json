@@ -30,6 +30,15 @@
       "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/codeg.png",
       "versions": [
         {
+          "version": "1.0.19",
+          "date": "2026-09-29",
+          "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.19-136/Codeg-unsigned.ipa",
+          "size": 8754407,
+          "minOSVersion": "16.0",
+          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from be0d40ca45f3b41d8b9f00b6685ba14047d07bb3.",
+          "buildVersion": "136"
+        },
+        {
           "version": "1.0.18",
           "date": "2026-09-29",
           "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.18-135/Codeg-unsigned.ipa",
@@ -46,15 +55,6 @@
           "minOSVersion": "16.0",
           "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 5637cae4d6b4af713e547753aa8aa474375e26a4.",
           "buildVersion": "134"
-        },
-        {
-          "version": "1.0.14",
-          "date": "2026-09-29",
-          "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.14-131/Codeg-unsigned.ipa",
-          "size": 8734764,
-          "minOSVersion": "16.0",
-          "localizedDescription": "Removed the transcript's temporary inset-calibration readout — the screenshots confirmed both the short-transcript gap and the head overlap are fixed, so the diagnostic shipped in v1.0.13 comes out.",
-          "buildVersion": "131"
         }
       ]
     },
