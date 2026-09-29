@@ -39,13 +39,13 @@
           "buildVersion": "126"
         },
         {
-          "version": "1.0.8",
+          "version": "1.0.13",
           "date": "2026-09-29",
-          "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.8-125/Codeg-unsigned.ipa",
-          "size": 8734221,
+          "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.13-130/Codeg-unsigned.ipa",
+          "size": 8737776,
           "minOSVersion": "16.0",
-          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 2e1884ae0597dad739fee52f8c6ef5f891fb1442.",
-          "buildVersion": "125"
+          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 4621285d3e544a4bd843a8105f1080de1b1f4c26.",
+          "buildVersion": "130"
         },
         {
           "version": "1.0.12",
@@ -80,7 +80,7 @@
           "version": "20260929",
           "date": "2026-09-29",
           "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v20260929-ios-unsigned.ipa",
-          "size": 17817439,
+          "size": 17817932,
           "minOSVersion": "14.0",
           "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         },
