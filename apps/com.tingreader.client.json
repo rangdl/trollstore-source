@@ -1,0 +1,20 @@
+{
+  "name": "听悦",
+  "bundleIdentifier": "com.tingreader.client",
+  "developerName": "dqsq2e2",
+  "subtitle": "Ting Reader（听悦）自托管有声书平台的 iOS 客户端",
+  "localizedDescription": "听悦 Ting Reader —— 自托管有声书平台 Ting Reader 的官方跨平台客户端（Flutter）。\n\n连接自托管的 Ting Reader 服务端，提供书架、书单、下载、本地离线播放和沉浸式播放体验，支持多端播放进度同步。\n\n本构建为未签名 IPA，需要 TrollStore 安装。",
+  "icon": "icons/com.tingreader.client.png",
+  "tintColor": "#1E1E36",
+  "category": "books",
+  "screenshots": [],
+  "appPermissions": {
+    "entitlements": [],
+    "privacy": {}
+  },
+  "auto": {
+    "repo": "dqsq2e2/ting-reader-flutter",
+    "minOSVersion": "15.0",
+    "asset": "TingReader-ios-self-sign.ipa"
+  }
+}
