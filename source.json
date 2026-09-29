@@ -62,9 +62,9 @@
           "version": "20260929",
           "date": "2026-09-29",
           "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v20260929-ios-unsigned.ipa",
-          "size": 17813360,
+          "size": 17810861,
           "minOSVersion": "14.0",
-          "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7."
+          "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         }
       ]
     },

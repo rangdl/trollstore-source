@@ -109,6 +109,27 @@ def version_from_tag(tag: str, pattern: str | None) -> str:
     return match.group(1) if match else tag.lstrip("v")
 
 
+def release_notes(release: dict, limit: int = 4000) -> str:
+    """Turn a release body into the per-version changelog clients show.
+
+    TrollApps renders the version's ``localizedDescription`` as its WHATS NEW
+    section in plain text, so lightly de-markdown the body instead of shipping
+    raw ``#``/``[]()`` syntax. Empty bodies yield "".
+    """
+    body = (release.get("body") or "").strip()
+    if not body:
+        return ""
+    body = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", body)              # images
+    body = re.sub(r"\[([^\]]+)\]\(([^)\s]+)[^)]*\)", r"\1 (\2)", body)  # links
+    body = re.sub(r"^#{1,6}\s+", "", body, flags=re.MULTILINE)    # headings
+    body = re.sub(r"^[ \t]*[-*+]\s+", "· ", body, flags=re.MULTILINE)  # bullets
+    body = re.sub(r"\*\*?([^*]+)\*\*?", r"\1", body)              # bold/italic
+    body = re.sub(r"\n{3,}", "\n\n", body)
+    if len(body) > limit:
+        body = body[:limit].rstrip() + " …"
+    return body
+
+
 def release_for(app: dict, token: str | None) -> dict:
     """Fetch the release an ``auto`` app tracks.
 
@@ -162,7 +183,7 @@ def versions_from_release(app: dict, token: str | None) -> list[dict]:
     from_asset = auto.get("versionFromAsset")
     version_source = asset["name"] if from_asset else release.get("tag_name", "")
     version = version_from_tag(version_source, auto.get("versionPattern"))
-    notes = (release.get("body") or "").strip().splitlines()
+    notes = release_notes(release)
     # Assets of a rolling tag carry their own upload date, which is the honest
     # date for that build; a pinned tag's publish date would never move.
     date = ((asset.get("created_at") if from_asset else None)
@@ -173,7 +194,7 @@ def versions_from_release(app: dict, token: str | None) -> list[dict]:
         "downloadURL": asset["browser_download_url"],
         "size": asset["size"],
         "minOSVersion": auto.get("minOSVersion", "14.0"),
-        "localizedDescription": notes[0] if notes else f"{app['name']} {version}",
+        "localizedDescription": notes or f"{app['name']} {version}",
     }
     # Tags of the form v1.0.2-119 carry the build number after the dash.
     if auto.get("buildFromTag"):

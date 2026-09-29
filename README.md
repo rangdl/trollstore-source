@@ -114,6 +114,10 @@ scripts/build_source.py
 | `versionFromAsset` | 让 `versionPattern` 匹配资产名而非 tag，版本日期取资产的上传时间 |
 | `versionPattern` | 版本号正则，第 1 个捕获组作为版本号（默认 `^v?(\d+\.\d+\.\d+)`） |
 
+## 更新日志
+
+ TrollApps 的应用详情页会把 `versions[].localizedDescription` 显示为 **WHATS NEW**，切换历史版本还能看各自的说明。带 `auto` 的应用会自动把上游 GitHub Release 的正文（去掉 markdown 语法、图片和超长截断）填进去，无需手工维护；手动应用直接在 `versions[].localizedDescription` 里写即可。
+
 ## 自动刷新
 
 `apps/*.json` 里带 `auto` 的应用由 GitHub Actions 维护
