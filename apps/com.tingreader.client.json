@@ -15,6 +15,7 @@
   "auto": {
     "repo": "dqsq2e2/ting-reader-flutter",
     "minOSVersion": "15.0",
-    "asset": "TingReader-ios-self-sign.ipa"
+    "asset": "TingReader-ios-self-sign.ipa",
+    "history": 3
   }
 }

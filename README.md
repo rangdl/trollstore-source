@@ -103,7 +103,7 @@ scripts/add-app.py <ipa-url> \
 scripts/build_source.py
 ```
 
-`versions` 数组里**最新的一版放最前面**（客户端把 `versions[0]` 当作当前版本）。
+`versions` 数组里**最新的一版放最前面**（客户端把 `versions[0]` 当作当前版本）。数组里放多个版本，TrollApps 详情页就会出现版本选择器，可以回装旧版。
 
 `auto` 块支持的可选字段（对应上面脚本的同名参数）：
 
@@ -111,12 +111,13 @@ scripts/build_source.py
 |---|---|
 | `tag` | 跟踪指定 tag，而不是仓库的最新正式 release（滚动的 `latest` 预发布就填它） |
 | `assetPattern` | 资产名正则，多个匹配时取上传时间最新的；填了它就不用 `asset` |
+| `history` | 追踪最近 N 个版本（默认 1），N>1 时客户端有版本选择器；滚动标签则把标签下多个日期构建各列为一版 |
 | `versionFromAsset` | 让 `versionPattern` 匹配资产名而非 tag，版本日期取资产的上传时间 |
 | `versionPattern` | 版本号正则，第 1 个捕获组作为版本号（默认 `^v?(\d+\.\d+\.\d+)`） |
 
-## 更新日志
+## 更新日志与版本选择
 
- TrollApps 的应用详情页会把 `versions[].localizedDescription` 显示为 **WHATS NEW**，切换历史版本还能看各自的说明。带 `auto` 的应用会自动把上游 GitHub Release 的正文（去掉 markdown 语法、图片和超长截断）填进去，无需手工维护；手动应用直接在 `versions[].localizedDescription` 里写即可。
+TrollApps 的应用详情页会把 `versions[].localizedDescription` 显示为 **WHATS NEW**；`versions` 多于一个时还会出现**版本选择器**，切换历史版本可以看各自的说明、回装旧版（安装按钮装的就是选中的版本）。带 `auto` 的应用：release 正文（去掉 markdown 语法，超长截断）自动成为该版本的日志；`history: N` 让源带上最近 N 个版本。手动应用直接在 `versions[]` 里多写几条即可。
 
 ## 自动刷新
 

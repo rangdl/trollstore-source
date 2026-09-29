@@ -79,7 +79,7 @@ def github_token() -> str | None:
     return None
 
 
-def github_get(path: str, token: str | None) -> dict:
+def github_get(path: str, token: str | None) -> dict | list:
     request = urllib.request.Request(
         f"https://api.github.com/{path}",
         headers={
@@ -174,13 +174,31 @@ def pick_asset(app: dict, release: dict) -> dict:
     return asset
 
 
-def versions_from_release(app: dict, token: str | None) -> list[dict]:
+def assets_matching(app: dict, release: dict) -> list[dict]:
+    """All release assets an ``auto`` rule accepts, newest upload first.
+
+    ``auto.asset`` matches a name exactly (at most one); ``auto.assetPattern``
+    is a regex that may match several (e.g. a rolling tag that accumulates
+    dated builds).
+    """
     auto = app["auto"]
-    release = release_for(app, token)
-    asset = pick_asset(app, release)
+    assets = release.get("assets") or []
+    pattern = auto.get("assetPattern")
+    if pattern:
+        regex = re.compile(pattern)
+        matches = [a for a in assets if regex.search(a["name"])]
+        matches.sort(key=lambda a: (a.get("created_at") or "", a["name"]), reverse=True)
+        return matches
+    asset_name = auto.get("asset")
+    return [a for a in assets if a["name"] == asset_name]
+
+
+def version_entry(app: dict, release: dict, asset: dict) -> dict:
+    """Build one AltStore version entry from a release + its chosen asset."""
+    auto = app["auto"]
+    from_asset = auto.get("versionFromAsset")
     # A rolling tag is pinned (its tag_name is constant), so take the version —
     # and, with ``versionFromAsset``, the pattern itself — from the asset name.
-    from_asset = auto.get("versionFromAsset")
     version_source = asset["name"] if from_asset else release.get("tag_name", "")
     version = version_from_tag(version_source, auto.get("versionPattern"))
     notes = release_notes(release)
@@ -199,7 +217,60 @@ def versions_from_release(app: dict, token: str | None) -> list[dict]:
     # Tags of the form v1.0.2-119 carry the build number after the dash.
     if auto.get("buildFromTag"):
         entry["buildVersion"] = release.get("tag_name", "").split("-")[-1]
-    return [entry]
+    return entry
+
+
+def versions_from_release(app: dict, token: str | None) -> list[dict]:
+    """Version entries for an ``auto`` app, newest first.
+
+    ``auto.history`` (default 1) asks for more than the newest version, which
+    gives clients like TrollApps a version picker. Two shapes:
+
+    * a pinned ``tag`` is one release whose assets may be several dated
+      builds — each matching asset becomes one version entry;
+    * otherwise the repo's recent releases are walked (drafts and prereleases
+      skipped, like ``releases/latest`` does) until ``history`` are collected.
+    """
+    auto = app["auto"]
+    history = max(1, int(auto.get("history", 1)))
+    entries: list[dict] = []
+
+    if auto.get("tag"):
+        release = release_for(app, token)
+        assets = assets_matching(app, release)
+        if not assets:
+            available = ", ".join(a["name"] for a in release.get("assets") or []) or "(none)"
+            fail(
+                f"{app['name']}: no matching asset in {auto['repo']} "
+                f"{release.get('tag_name')} — available: {available}"
+            )
+        entries = [version_entry(app, release, asset) for asset in assets[:history]]
+    else:
+        releases = github_get(
+            f"repos/{auto['repo']}/releases?per_page={history * 3}", token
+        )
+        if not isinstance(releases, list):
+            fail(f"{app['name']}: expected a release list for {auto['repo']}")
+        for release in releases:
+            if release.get("draft") or release.get("prerelease"):
+                continue  # /releases/latest never hands these out either
+            matching = assets_matching(app, release)
+            if matching:
+                entries.append(version_entry(app, release, matching[0]))
+            if len(entries) >= history:
+                break
+        if not entries:
+            fail(f"{app['name']}: no release of {auto['repo']} has a matching asset")
+
+    # Keep the newest entry per version (clients treat versions[0] as current).
+    seen: set[str] = set()
+    unique = []
+    for entry in entries:
+        if entry["version"] in seen:
+            continue
+        seen.add(entry["version"])
+        unique.append(entry)
+    return unique
 
 
 # ------------------------------------------------------------------- assembling

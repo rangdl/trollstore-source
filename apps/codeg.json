@@ -21,6 +21,7 @@
     "asset": "Codeg-unsigned.ipa",
     "minOSVersion": "16.0",
     "versionPattern": "^v([0-9]+\\.[0-9]+\\.[0-9]+)",
-    "buildFromTag": true
+    "buildFromTag": true,
+    "history": 3
   }
 }

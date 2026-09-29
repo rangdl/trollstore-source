@@ -259,6 +259,8 @@ def main() -> int:
                         help="release tag to track instead of the repo's latest release "
                              "(e.g. a rolling 'latest' prerelease)")
     parser.add_argument("--auto-version-pattern", help="regex whose group 1 is the version")
+    parser.add_argument("--auto-history", type=int, default=1, metavar="N",
+                        help="track the N newest versions so clients get a version picker (default: 1)")
     parser.add_argument("--version-from-asset", action="store_true",
                         help="apply --auto-version-pattern to the asset name instead of the tag, "
                              "and date the version by the asset's upload time")
@@ -308,6 +310,7 @@ def main() -> int:
             **({"assetPattern": args.auto_asset_pattern} if args.auto_asset_pattern else {}),
             **({"tag": args.auto_tag} if args.auto_tag else {}),
             **({"versionPattern": args.auto_version_pattern} if args.auto_version_pattern else {}),
+            **({"history": args.auto_history} if args.auto_history > 1 else {}),
             **({"versionFromAsset": True} if args.version_from_asset else {}),
         }
     else:

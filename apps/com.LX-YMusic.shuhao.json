@@ -21,6 +21,7 @@
     "assetPattern": "LX-Y\\.Music-v(\\d{8})-ios-unsigned\\.ipa",
     "tag": "latest",
     "versionPattern": "v(\\d{8})",
-    "versionFromAsset": true
+    "versionFromAsset": true,
+    "history": 2
   }
 }

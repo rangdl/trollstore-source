@@ -37,6 +37,24 @@
           "minOSVersion": "16.0",
           "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 1b0b0e2e89d75ae256022933c75890b25f3bbd57.",
           "buildVersion": "123"
+        },
+        {
+          "version": "1.0.5",
+          "date": "2026-09-29",
+          "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.5-122/Codeg-unsigned.ipa",
+          "size": 8706518,
+          "minOSVersion": "16.0",
+          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 6569f85b7df92bf9237277e5cbaac35a51e3b88e.",
+          "buildVersion": "122"
+        },
+        {
+          "version": "1.0.4",
+          "date": "2026-09-28",
+          "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.4-121/Codeg-unsigned.ipa",
+          "size": 8718022,
+          "minOSVersion": "16.0",
+          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 9678dd61dbd70a89496945abd3d4a27fde1abe9b.",
+          "buildVersion": "121"
         }
       ]
     },
@@ -65,6 +83,14 @@
           "size": 17810861,
           "minOSVersion": "14.0",
           "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
+        },
+        {
+          "version": "20260928",
+          "date": "2026-09-28",
+          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v20260928-ios-unsigned.ipa",
+          "size": 17810368,
+          "minOSVersion": "14.0",
+          "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         }
       ]
     },
@@ -90,6 +116,22 @@
           "size": 14460218,
           "minOSVersion": "15.0",
           "localizedDescription": "听悦 1.3.6"
+        },
+        {
+          "version": "1.3.5",
+          "date": "2026-09-22",
+          "downloadURL": "https://gh-proxy.com/https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.3.5/TingReader-ios-self-sign.ipa",
+          "size": 14461262,
+          "minOSVersion": "15.0",
+          "localizedDescription": "听悦 1.3.5"
+        },
+        {
+          "version": "1.3.4",
+          "date": "2026-09-20",
+          "downloadURL": "https://gh-proxy.com/https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.3.4/TingReader-ios-self-sign.ipa",
+          "size": 14462690,
+          "minOSVersion": "15.0",
+          "localizedDescription": "听悦 1.3.4"
         }
       ]
     }
