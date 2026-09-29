@@ -30,6 +30,15 @@
       "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/codeg.png",
       "versions": [
         {
+          "version": "1.0.9",
+          "date": "2026-09-29",
+          "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.9-126/Codeg-unsigned.ipa",
+          "size": 8735145,
+          "minOSVersion": "16.0",
+          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from b0fb60d511e1b00b0b2a440e2f1fdbecc0f505a6.",
+          "buildVersion": "126"
+        },
+        {
           "version": "1.0.8",
           "date": "2026-09-29",
           "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.8-125/Codeg-unsigned.ipa",
@@ -46,15 +55,6 @@
           "minOSVersion": "16.0",
           "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 1b0b0e2e89d75ae256022933c75890b25f3bbd57.",
           "buildVersion": "123"
-        },
-        {
-          "version": "1.0.5",
-          "date": "2026-09-29",
-          "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.5-122/Codeg-unsigned.ipa",
-          "size": 8706518,
-          "minOSVersion": "16.0",
-          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 6569f85b7df92bf9237277e5cbaac35a51e3b88e.",
-          "buildVersion": "122"
         }
       ]
     },
@@ -80,7 +80,7 @@
           "version": "20260929",
           "date": "2026-09-29",
           "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v20260929-ios-unsigned.ipa",
-          "size": 17816765,
+          "size": 17817439,
           "minOSVersion": "14.0",
           "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         },
