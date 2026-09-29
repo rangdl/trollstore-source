@@ -253,7 +253,15 @@ def main() -> int:
     parser.add_argument("--min-os", help="minimum iOS version (default: from the IPA)")
     parser.add_argument("--auto-repo", help="OWNER/REPO to track for future releases")
     parser.add_argument("--auto-asset", help="asset name inside that repo's releases")
+    parser.add_argument("--auto-asset-pattern",
+                        help="regex matching the asset name (use when the name carries the version)")
+    parser.add_argument("--auto-tag",
+                        help="release tag to track instead of the repo's latest release "
+                             "(e.g. a rolling 'latest' prerelease)")
     parser.add_argument("--auto-version-pattern", help="regex whose group 1 is the version")
+    parser.add_argument("--version-from-asset", action="store_true",
+                        help="apply --auto-version-pattern to the asset name instead of the tag, "
+                             "and date the version by the asset's upload time")
     parser.add_argument("--force", action="store_true", help="overwrite an existing app file")
     parser.add_argument("--no-build", action="store_true", help="don't rebuild the sources afterwards")
     args = parser.parse_args()
@@ -289,13 +297,18 @@ def main() -> int:
     }
 
     if args.auto_repo:
-        if not args.auto_asset:
-            fail("--auto-repo needs --auto-asset (the .ipa asset name in its releases)")
+        if not args.auto_asset and not args.auto_asset_pattern:
+            fail("--auto-repo needs --auto-asset (exact name) or --auto-asset-pattern (regex)")
+        if args.version_from_asset and not args.auto_asset_pattern:
+            fail("--version-from-asset only makes sense with --auto-asset-pattern")
         app["auto"] = {
             "repo": args.auto_repo,
-            "asset": args.auto_asset,
             "minOSVersion": min_os,
+            **({"asset": args.auto_asset} if args.auto_asset else {}),
+            **({"assetPattern": args.auto_asset_pattern} if args.auto_asset_pattern else {}),
+            **({"tag": args.auto_tag} if args.auto_tag else {}),
             **({"versionPattern": args.auto_version_pattern} if args.auto_version_pattern else {}),
+            **({"versionFromAsset": True} if args.version_from_asset else {}),
         }
     else:
         app["versions"] = [{

@@ -109,24 +109,67 @@ def version_from_tag(tag: str, pattern: str | None) -> str:
     return match.group(1) if match else tag.lstrip("v")
 
 
-def versions_from_release(app: dict, token: str | None) -> list[dict]:
+def release_for(app: dict, token: str | None) -> dict:
+    """Fetch the release an ``auto`` app tracks.
+
+    ``auto.tag`` pins a specific tag (e.g. a rolling ``latest`` prerelease);
+    without it GitHub's latest non-prerelease, non-draft release is used.
+    """
+    repo = app["auto"]["repo"]
+    tag = app["auto"].get("tag")
+    path = f"repos/{repo}/releases/tags/{tag}" if tag else f"repos/{repo}/releases/latest"
+    return github_get(path, token)
+
+
+def pick_asset(app: dict, release: dict) -> dict:
+    """Find the release asset an ``auto`` app installs.
+
+    ``auto.asset`` matches a name exactly; ``auto.assetPattern`` is a regex that
+    may match several (e.g. a rolling tag that accumulates dated builds) — the
+    newest upload wins.
+    """
     auto = app["auto"]
-    repo = auto["repo"]
-    release = github_get(f"repos/{repo}/releases/latest", token)
-    asset_name = auto.get("asset")
     assets = release.get("assets") or []
+    pattern = auto.get("assetPattern")
+    if pattern:
+        regex = re.compile(pattern)
+        matches = [a for a in assets if regex.search(a["name"])]
+        if not matches:
+            available = ", ".join(a["name"] for a in assets) or "(none)"
+            fail(
+                f"{app['name']}: no asset matching {pattern!r} in {auto['repo']} "
+                f"{release.get('tag_name')} — available: {available}"
+            )
+        matches.sort(key=lambda a: (a.get("created_at") or "", a["name"]), reverse=True)
+        return matches[0]
+    asset_name = auto.get("asset")
     asset = next((a for a in assets if a["name"] == asset_name), None)
     if asset is None:
         available = ", ".join(a["name"] for a in assets) or "(none)"
         fail(
-            f"{app['name']}: no asset named {asset_name!r} in {repo} "
+            f"{app['name']}: no asset named {asset_name!r} in {auto['repo']} "
             f"{release.get('tag_name')} — available: {available}"
         )
-    version = version_from_tag(release.get("tag_name", ""), auto.get("versionPattern"))
+    return asset
+
+
+def versions_from_release(app: dict, token: str | None) -> list[dict]:
+    auto = app["auto"]
+    release = release_for(app, token)
+    asset = pick_asset(app, release)
+    # A rolling tag is pinned (its tag_name is constant), so take the version —
+    # and, with ``versionFromAsset``, the pattern itself — from the asset name.
+    from_asset = auto.get("versionFromAsset")
+    version_source = asset["name"] if from_asset else release.get("tag_name", "")
+    version = version_from_tag(version_source, auto.get("versionPattern"))
     notes = (release.get("body") or "").strip().splitlines()
+    # Assets of a rolling tag carry their own upload date, which is the honest
+    # date for that build; a pinned tag's publish date would never move.
+    date = ((asset.get("created_at") if from_asset else None)
+            or release.get("published_at") or "")[:10]
     entry = {
         "version": version,
-        "date": (release.get("published_at") or "")[:10],
+        "date": date,
         "downloadURL": asset["browser_download_url"],
         "size": asset["size"],
         "minOSVersion": auto.get("minOSVersion", "14.0"),

@@ -54,6 +54,22 @@ scripts/add-app.py <ipa-url> \
     --auto-repo owner/repo --auto-asset App-unsigned.ipa --min-os 15.0
 ```
 
+资产名里带版本号的仓库（例如 `App-v20260929.ipa`，每次发版名字都变），用正则匹配并从资产名抽版本号：
+
+```bash
+scripts/add-app.py <ipa-url> \
+    --auto-repo owner/repo \
+    --auto-tag latest \
+    --auto-asset-pattern 'App-v(\d{8})\.ipa' \
+    --auto-version-pattern 'v(\d{8})' \
+    --version-from-asset \
+    --min-os 15.0
+```
+
+- `--auto-tag`：跟踪指定 tag 而不是仓库的最新正式 release（适合滚动的 `latest` 预发布）
+- `--auto-asset-pattern`：资产名正则，多个匹配时取上传时间最新的那个
+- `--version-from-asset`：让 `--auto-version-pattern` 匹配资产名而非 tag，且版本日期取资产的上传时间
+
 ### 方式二：手写一个 app 文件
 
 在 `apps/` 下新建 `任意名字.json`：
@@ -88,6 +104,15 @@ scripts/build_source.py
 ```
 
 `versions` 数组里**最新的一版放最前面**（客户端把 `versions[0]` 当作当前版本）。
+
+`auto` 块支持的可选字段（对应上面脚本的同名参数）：
+
+| 字段 | 作用 |
+|---|---|
+| `tag` | 跟踪指定 tag，而不是仓库的最新正式 release（滚动的 `latest` 预发布就填它） |
+| `assetPattern` | 资产名正则，多个匹配时取上传时间最新的；填了它就不用 `asset` |
+| `versionFromAsset` | 让 `versionPattern` 匹配资产名而非 tag，版本日期取资产的上传时间 |
+| `versionPattern` | 版本号正则，第 1 个捕获组作为版本号（默认 `^v?(\d+\.\d+\.\d+)`） |
 
 ## 自动刷新
 

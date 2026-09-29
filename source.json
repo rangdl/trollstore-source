@@ -39,6 +39,34 @@
           "buildVersion": "123"
         }
       ]
+    },
+    {
+      "name": "LX-Y Music",
+      "bundleIdentifier": "com.LX-YMusic.shuhao",
+      "developerName": "lyswhut / 1970905901",
+      "subtitle": "LX Music 的 iOS 适配版，本地/在线音乐播放",
+      "localizedDescription": "LX-Y Music —— 基于 React Native 的 lx-music-mobile iOS 适配分支，发布未签名 IPA 供 TrollStore 自签安装。\n\n支持本地与在线音乐播放、自定义音源与歌单同步等功能。",
+      "tintColor": "#1E1E36",
+      "category": "entertainment",
+      "screenshots": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSPhotoLibraryUsageDescription": "用于选择自定义背景图片",
+          "NSLocalNetworkUsageDescription": "用于局域网内获取歌词与声学指纹数据"
+        }
+      },
+      "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.LX-YMusic.shuhao.png",
+      "versions": [
+        {
+          "version": "20260929",
+          "date": "2026-09-29",
+          "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v20260929-ios-unsigned.ipa",
+          "size": 17810491,
+          "minOSVersion": "14.0",
+          "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7."
+        }
+      ]
     }
   ],
   "news": []

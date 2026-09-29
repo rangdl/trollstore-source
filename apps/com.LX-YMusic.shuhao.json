@@ -1,0 +1,26 @@
+{
+  "name": "LX-Y Music",
+  "bundleIdentifier": "com.LX-YMusic.shuhao",
+  "developerName": "lyswhut / 1970905901",
+  "subtitle": "LX Music 的 iOS 适配版，本地/在线音乐播放",
+  "localizedDescription": "LX-Y Music —— 基于 React Native 的 lx-music-mobile iOS 适配分支，发布未签名 IPA 供 TrollStore 自签安装。\n\n支持本地与在线音乐播放、自定义音源与歌单同步等功能。",
+  "icon": "icons/com.LX-YMusic.shuhao.png",
+  "tintColor": "#1E1E36",
+  "category": "entertainment",
+  "screenshots": [],
+  "appPermissions": {
+    "entitlements": [],
+    "privacy": {
+      "NSPhotoLibraryUsageDescription": "用于选择自定义背景图片",
+      "NSLocalNetworkUsageDescription": "用于局域网内获取歌词与声学指纹数据"
+    }
+  },
+  "auto": {
+    "repo": "1970905901/LX-Y-Music-IOS",
+    "minOSVersion": "14.0",
+    "assetPattern": "LX-Y\\.Music-v(\\d{8})-ios-unsigned\\.ipa",
+    "tag": "latest",
+    "versionPattern": "v(\\d{8})",
+    "versionFromAsset": true
+  }
+}
