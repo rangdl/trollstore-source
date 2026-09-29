@@ -48,13 +48,13 @@
           "buildVersion": "125"
         },
         {
-          "version": "1.0.6",
+          "version": "1.0.12",
           "date": "2026-09-29",
-          "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.6-123/Codeg-unsigned.ipa",
-          "size": 8734907,
+          "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.12-129/Codeg-unsigned.ipa",
+          "size": 8737798,
           "minOSVersion": "16.0",
-          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 1b0b0e2e89d75ae256022933c75890b25f3bbd57.",
-          "buildVersion": "123"
+          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 6004cbbd52fc9ab83b7f570f7b8fb68e8faf54c4.",
+          "buildVersion": "129"
         }
       ]
     },
