@@ -30,13 +30,13 @@
       "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/codeg.png",
       "versions": [
         {
-          "version": "1.0.9",
+          "version": "1.0.14",
           "date": "2026-09-29",
-          "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.9-126/Codeg-unsigned.ipa",
-          "size": 8735145,
+          "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.14-131/Codeg-unsigned.ipa",
+          "size": 8734764,
           "minOSVersion": "16.0",
-          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from b0fb60d511e1b00b0b2a440e2f1fdbecc0f505a6.",
-          "buildVersion": "126"
+          "localizedDescription": "Removed the transcript's temporary inset-calibration readout — the screenshots confirmed both the short-transcript gap and the head overlap are fixed, so the diagnostic shipped in v1.0.13 comes out.",
+          "buildVersion": "131"
         },
         {
           "version": "1.0.13",
