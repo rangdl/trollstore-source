@@ -1,0 +1,26 @@
+{
+  "name": "Codeg",
+  "bundleIdentifier": "app.codeg.ios",
+  "developerName": "xintaofei / rangdl",
+  "subtitle": "codeg 多智能体编码服务器的 iOS 客户端",
+  "localizedDescription": "Codeg for iOS —— codeg 多智能体编码服务器的原生客户端（iPhone / iPad）。\n\n管理服务器、浏览会话、阅读完整对话记录（Markdown、推理过程、工具调用），并实时接收 Agent 的流式回复。\n\n本构建为未签名 IPA，由 GitHub Actions 从 tag 自动构建，需要 TrollStore 安装。",
+  "icon": "icons/codeg.png",
+  "tintColor": "#1E1E36",
+  "category": "developer",
+  "screenshots": [],
+  "appPermissions": {
+    "entitlements": [],
+    "privacy": {
+      "NSLocalNetworkUsageDescription": "Codeg connects to your codeg server, which may run on your local network.",
+      "NSPhotoLibraryUsageDescription": "Codeg attaches photos you pick to your message to the agent.",
+      "NSCameraUsageDescription": "Codeg uses the camera to take photos for your messages and to scan a server's QR code."
+    }
+  },
+  "auto": {
+    "repo": "rangdl/codeg-ios",
+    "asset": "Codeg-unsigned.ipa",
+    "minOSVersion": "16.0",
+    "versionPattern": "^v([0-9]+\\.[0-9]+\\.[0-9]+)",
+    "buildFromTag": true
+  }
+}

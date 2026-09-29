@@ -1,0 +1,49 @@
+name: Refresh sources
+
+# The sources are generated: apps/*.json describes each app (some of them by
+# pointing at a GitHub repository's releases), and scripts/build_source.py turns
+# that into source.json / source-cn.json. This workflow re-runs it so apps that
+# track a release stay current without anyone editing a file.
+
+on:
+  schedule:
+    # Every 6 hours — cheap (a handful of API calls) and keeps the lag small.
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  # Lets a project's own release workflow refresh this source immediately, e.g.
+  #   gh api repos/rangdl/trollstore-source/dispatches \
+  #     -f event_type=app-release -f client_payload[app]=codeg
+  repository_dispatch:
+    types: [app-release]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild the sources
+        env:
+          # Authenticated calls: 5000 requests/hour instead of 60.
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/build_source.py
+
+      - name: Commit when something changed
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "the sources are already up to date"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: refresh the sources"
+          git push

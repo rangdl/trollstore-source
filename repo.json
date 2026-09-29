@@ -1,0 +1,12 @@
+{
+  "name": "Rangdl 的巨魔源",
+  "identifier": "com.rangdl.trollstore.source",
+  "subtitle": "自用 TrollStore 应用合集",
+  "description": "给 TrollStore（巨魔）使用的 AltStore 格式软件源。\n\n包含 Codeg for iOS，以及自用的其他应用。带 auto 规则的应用会自动跟随上游 GitHub Release 更新，无需手工维护。",
+  "icon": "icons/repo.png",
+  "tintColor": "#1E1E36",
+  "website": "https://github.com/rangdl/trollstore-source",
+  "featuredApps": [
+    "app.codeg.ios"
+  ]
+}
