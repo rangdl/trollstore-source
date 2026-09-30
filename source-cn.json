@@ -30,6 +30,15 @@
       "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/codeg.png",
       "versions": [
         {
+          "version": "1.0.30",
+          "date": "2026-09-30",
+          "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.30-147/Codeg-unsigned.ipa",
+          "size": 8982227,
+          "minOSVersion": "16.0",
+          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 84b0128edcfac114a9b5f8174b5601089082b55d.",
+          "buildVersion": "147"
+        },
+        {
           "version": "1.0.29",
           "date": "2026-09-30",
           "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.29-146/Codeg-unsigned.ipa",
@@ -46,15 +55,6 @@
           "minOSVersion": "16.0",
           "localizedDescription": "Unsigned IPA (min iOS 16.0), built from e6565f67889d801ae8eb302b9227ff3d19225d33.",
           "buildVersion": "145"
-        },
-        {
-          "version": "1.0.27",
-          "date": "2026-09-29",
-          "downloadURL": "https://gh-proxy.com/https://github.com/rangdl/codeg-ios/releases/download/v1.0.27-144/Codeg-unsigned.ipa",
-          "size": 8980501,
-          "minOSVersion": "16.0",
-          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from f137d5a538be44fe88d7f7ed810c9f92853bbd5b.",
-          "buildVersion": "144"
         }
       ]
     },
