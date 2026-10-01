@@ -30,6 +30,15 @@
       "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/codeg.png",
       "versions": [
         {
+          "version": "1.0.35",
+          "date": "2026-10-01",
+          "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.35-152/Codeg-unsigned.ipa",
+          "size": 9001934,
+          "minOSVersion": "16.0",
+          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from b95c022ae60d01153102a1f34349535962b066f6.",
+          "buildVersion": "152"
+        },
+        {
           "version": "1.0.33",
           "date": "2026-09-30",
           "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.33-150/Codeg-unsigned.ipa",
@@ -46,15 +55,6 @@
           "minOSVersion": "16.0",
           "localizedDescription": "Unsigned IPA (min iOS 16.0), built from 9a4874ef875060b48a737d0a78063a1cc2d361da.",
           "buildVersion": "149"
-        },
-        {
-          "version": "1.0.31",
-          "date": "2026-09-30",
-          "downloadURL": "https://github.com/rangdl/codeg-ios/releases/download/v1.0.31-148/Codeg-unsigned.ipa",
-          "size": 8982218,
-          "minOSVersion": "16.0",
-          "localizedDescription": "Unsigned IPA (min iOS 16.0), built from b40cf6f6372656a6abb3ed1527c3ad86d308f237.",
-          "buildVersion": "148"
         }
       ]
     },
