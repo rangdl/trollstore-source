@@ -77,18 +77,18 @@
       "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.LX-YMusic.shuhao.png",
       "versions": [
         {
-          "version": "202610031455",
-          "date": "2026-10-03",
-          "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610031455-ios-unsigned.ipa",
-          "size": 17847801,
+          "version": "202610050444",
+          "date": "2026-10-05",
+          "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610050444-ios-unsigned.ipa",
+          "size": 17848594,
           "minOSVersion": "14.0",
           "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         },
         {
-          "version": "202610031409",
+          "version": "202610031455",
           "date": "2026-10-03",
-          "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610031409-ios-unsigned.ipa",
-          "size": 17848050,
+          "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610031455-ios-unsigned.ipa",
+          "size": 17847801,
           "minOSVersion": "14.0",
           "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         }
