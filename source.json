@@ -77,18 +77,18 @@
       "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.LX-YMusic.shuhao.png",
       "versions": [
         {
-          "version": "202610060533",
+          "version": "202610061807",
           "date": "2026-10-06",
-          "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610060533-ios-unsigned.ipa",
-          "size": 17856014,
+          "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610061807-ios-unsigned.ipa",
+          "size": 17858092,
           "minOSVersion": "14.0",
           "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         },
         {
-          "version": "202610060505",
+          "version": "202610061646",
           "date": "2026-10-06",
-          "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610060505-ios-unsigned.ipa",
-          "size": 17855494,
+          "downloadURL": "https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610061646-ios-unsigned.ipa",
+          "size": 17858106,
           "minOSVersion": "14.0",
           "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         }
@@ -110,6 +110,14 @@
       "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.tingreader.client.png",
       "versions": [
         {
+          "version": "1.4.2",
+          "date": "2026-10-06",
+          "downloadURL": "https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.4.2/TingReader-ios-self-sign.ipa",
+          "size": 14581569,
+          "minOSVersion": "15.0",
+          "localizedDescription": "修复与优化\n· 转码播放时长与进度：修复 Android 播放 WMA 等需要转码的音频时，总时长显示错误、应用和系统通知栏进度条提前走满但声音仍继续播放的问题。\n· 转码进度同步：修复暂停、缓冲、调整倍速及跳转后播放进度不准确的问题。\n· 转码音频连播：修复普通登录下 WMA 等转码音频播放结束后无法自动进入下一集的问题，并避免手动暂停或跳转后意外切换章节。\n· 飞牛通知栏封面：修复飞牛登录时系统通知栏可能无法显示服务器本地封面的问题。"
+        },
+        {
           "version": "1.4.1",
           "date": "2026-10-04",
           "downloadURL": "https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.4.1/TingReader-ios-self-sign.ipa",
@@ -124,14 +132,6 @@
           "size": 14570418,
           "minOSVersion": "15.0",
           "localizedDescription": "1.4.0 - 2026-10-03\r\n\r\n🛠️ 修复与优化\r\n· 未知发布者安装确认：安装前展示插件名称、版本、运行类型、能力和完整请求权限，显示域名与路径范围，并突出敏感权限。\r\n· 插件包变化确认：安装确认携带服务端提供的包摘要，包发生变化时重新检查权限并确认。\r\n· 确认窗口布局：长权限列表可滚动，适配中英文及窄屏布局，零权限声明明确展示。"
-        },
-        {
-          "version": "1.3.9",
-          "date": "2026-10-02",
-          "downloadURL": "https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.3.9/TingReader-ios-self-sign.ipa",
-          "size": 14565028,
-          "minOSVersion": "15.0",
-          "localizedDescription": "✨ 新功能\n· 书架列表模式：展示设置支持切换网格和列表，保存账号偏好；两种模式均保留分组、批量选择和滚动懒加载，切换时保留已加载书籍和选择状态。\n\n🛠️ 修复与优化\n· 书架标题与进度：网格、列表的书名统一为单行省略；列表阅读进度条铺满封面右侧的可用宽度，切换展示模式后保持正确进度。\n· 插件卡片标签：与 Web 端统一功能标签、排序和格式名称，合并重复标签；权限数量直接显示，长按或悬浮可查看完整权限及适用范围，依赖和支持格式也支持完整提示。\n· 插件页面布局：卡片高度随标签与描述自适应，补齐加载中、未启用状态文案；修复页面初始化过早读取应用状态，以及窄屏英文标签页溢出的问题。"
         }
       ]
     }
