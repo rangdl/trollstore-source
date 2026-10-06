@@ -77,18 +77,18 @@
       "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.LX-YMusic.shuhao.png",
       "versions": [
         {
-          "version": "202610050943",
+          "version": "202610051827",
           "date": "2026-10-05",
-          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610050943-ios-unsigned.ipa",
-          "size": 17849003,
+          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610051827-ios-unsigned.ipa",
+          "size": 17848863,
           "minOSVersion": "14.0",
           "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         },
         {
-          "version": "202610050900",
+          "version": "202610050943",
           "date": "2026-10-05",
-          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610050900-ios-unsigned.ipa",
-          "size": 17850936,
+          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610050943-ios-unsigned.ipa",
+          "size": 17849003,
           "minOSVersion": "14.0",
           "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         }
