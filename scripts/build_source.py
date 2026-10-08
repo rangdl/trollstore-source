@@ -134,12 +134,23 @@ def release_for(app: dict, token: str | None) -> dict:
     """Fetch the release an ``auto`` app tracks.
 
     ``auto.tag`` pins a specific tag (e.g. a rolling ``latest`` prerelease);
-    without it GitHub's latest non-prerelease, non-draft release is used.
+    without it GitHub's latest non-prerelease, non-draft release is used —
+    unless ``auto.prerelease`` opts in, in which case the newest non-draft
+    release wins even when GitHub flags it as a prerelease.
     """
     repo = app["auto"]["repo"]
     tag = app["auto"].get("tag")
-    path = f"repos/{repo}/releases/tags/{tag}" if tag else f"repos/{repo}/releases/latest"
-    return github_get(path, token)
+    if tag:
+        return github_get(f"repos/{repo}/releases/tags/{tag}", token)
+    if app["auto"].get("prerelease"):
+        releases = github_get(f"repos/{repo}/releases?per_page=10", token)
+        if not isinstance(releases, list) or not releases:
+            fail(f"{app['name']}: {repo} has no releases")
+        release = next((r for r in releases if not r.get("draft")), None)
+        if release is None:
+            fail(f"{app['name']}: {repo} has no non-draft release")
+        return release
+    return github_get(f"repos/{repo}/releases/latest", token)
 
 
 def pick_asset(app: dict, release: dict) -> dict:
@@ -228,8 +239,9 @@ def versions_from_release(app: dict, token: str | None) -> list[dict]:
 
     * a pinned ``tag`` is one release whose assets may be several dated
       builds — each matching asset becomes one version entry;
-    * otherwise the repo's recent releases are walked (drafts and prereleases
-      skipped, like ``releases/latest`` does) until ``history`` are collected.
+    * otherwise the repo's recent releases are walked (drafts skipped, and
+      prereleases too unless ``auto.prerelease`` opts in) until ``history``
+      are collected.
     """
     auto = app["auto"]
     history = max(1, int(auto.get("history", 1)))
@@ -251,8 +263,11 @@ def versions_from_release(app: dict, token: str | None) -> list[dict]:
         )
         if not isinstance(releases, list):
             fail(f"{app['name']}: expected a release list for {auto['repo']}")
+        allow_prerelease = auto.get("prerelease", False)
         for release in releases:
-            if release.get("draft") or release.get("prerelease"):
+            if release.get("draft"):
+                continue
+            if release.get("prerelease") and not allow_prerelease:
                 continue  # /releases/latest never hands these out either
             matching = assets_matching(app, release)
             if matching:

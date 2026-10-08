@@ -95,6 +95,52 @@
       ]
     },
     {
+      "name": "阅读MR",
+      "bundleIdentifier": "com.mr.app",
+      "developerName": "DandanLLab",
+      "subtitle": "阅读 3.0 的 Flutter 六端兼容版，书源通用",
+      "localizedDescription": "阅读MR —— 阅读 3.0（legado）的社区重写版，基于 Flutter 支持 Android / iOS / 鸿蒙等六端。\n\n兼容阅读 3.0 的书源规则（CSS / JSONPath / XPath / JS + java.* 桥函数），可直接导入现有书源，支持小说、漫画、视频、音频等多媒体内容。\n\n本构建为未签名 IPA，需要 TrollStore 安装。",
+      "tintColor": "#1E1E36",
+      "category": "books",
+      "screenshots": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSCameraUsageDescription": "MR 需要使用相机扫描二维码以导入书源",
+          "NSPhotoLibraryUsageDescription": "MR 需要访问相册以保存书籍封面和导出图片",
+          "NSMicrophoneUsageDescription": "MR 需要使用麦克风进行语音相关功能",
+          "NSLocalNetworkUsageDescription": "MR 需要访问本地网络以连接局域网内的书源服务器和 WebDAV"
+        }
+      },
+      "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.mr.app.png",
+      "versions": [
+        {
+          "version": "2609127",
+          "date": "2026-09-12",
+          "downloadURL": "https://github.com/DandanLLab/mr/releases/download/v2609127-dev/mr_v2609127_dev_2026-09-12_ios.ipa",
+          "size": 20996360,
+          "minOSVersion": "16.0",
+          "localizedDescription": "MR 2609127\n\n打包类型: 测试版 (dev)\n\n构建日期: 2026-09-12\n\n版本号: 26.0912.7（pubspec.yaml 格式）\n\n构建号: 1789193740\n\n---\n\nAndroid\n· `.apk` 文件直接安装\n· `.zip` 文件为压缩包，解压后安装\n· 安装方法：下载 APK → 允许未知来源 → 安装\n\niOS\n· `.ipa` 文件需通过侧载工具安装（AltStore/Sideloadly/TrollStore）\n· 未签名版本，需自签或使用侧载工具\n· 安装方法：下载 IPA → 使用侧载工具安装\n\nHarmonyOS（鸿蒙）\n· `.hap` 文件为鸿蒙安装包\n· 安装方法：通过 hdc 工具安装 `hdc install xxx.hap`，或推送到设备后用文件管理器安装\n· 需在鸿蒙系统设置中允许未知来源应用安装"
+        },
+        {
+          "version": "2609126",
+          "date": "2026-09-12",
+          "downloadURL": "https://github.com/DandanLLab/mr/releases/download/v2609126-dev/mr_v2609126_dev_2026-09-12_ios.ipa",
+          "size": 20986231,
+          "minOSVersion": "16.0",
+          "localizedDescription": "MR 2609126\n\n打包类型: 测试版 (dev)\n\n构建日期: 2026-09-12\n\n版本号: 26.0912.6（pubspec.yaml 格式）\n\n构建号: 1789176605\n\n---\n\nAndroid\n· `.apk` 文件直接安装\n· `.zip` 文件为压缩包，解压后安装\n· 安装方法：下载 APK → 允许未知来源 → 安装\n\niOS\n· `.ipa` 文件需通过侧载工具安装（AltStore/Sideloadly/TrollStore）\n· 未签名版本，需自签或使用侧载工具\n· 安装方法：下载 IPA → 使用侧载工具安装\n\nHarmonyOS（鸿蒙）\n· `.hap` 文件为鸿蒙安装包\n· 安装方法：通过 hdc 工具安装 `hdc install xxx.hap`，或推送到设备后用文件管理器安装\n· 需在鸿蒙系统设置中允许未知来源应用安装"
+        },
+        {
+          "version": "2609125",
+          "date": "2026-09-12",
+          "downloadURL": "https://github.com/DandanLLab/mr/releases/download/v2609125-dev/mr_v2609125_dev_2026-09-12_ios.ipa",
+          "size": 20986204,
+          "minOSVersion": "16.0",
+          "localizedDescription": "MR 2609125\n\n打包类型: 测试版 (dev)\n\n构建日期: 2026-09-12\n\n版本号: 26.0912.5（pubspec.yaml 格式）\n\n构建号: 1789174546\n\n---\n\nAndroid\n· `.apk` 文件直接安装\n· `.zip` 文件为压缩包，解压后安装\n· 安装方法：下载 APK → 允许未知来源 → 安装\n\niOS\n· `.ipa` 文件需通过侧载工具安装（AltStore/Sideloadly/TrollStore）\n· 未签名版本，需自签或使用侧载工具\n· 安装方法：下载 IPA → 使用侧载工具安装\n\nHarmonyOS（鸿蒙）\n· `.hap` 文件为鸿蒙安装包\n· 安装方法：通过 hdc 工具安装 `hdc install xxx.hap`，或推送到设备后用文件管理器安装\n· 需在鸿蒙系统设置中允许未知来源应用安装"
+        }
+      ]
+    },
+    {
       "name": "听悦",
       "bundleIdentifier": "com.tingreader.client",
       "developerName": "dqsq2e2",

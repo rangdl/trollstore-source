@@ -1,0 +1,29 @@
+{
+  "name": "阅读MR",
+  "bundleIdentifier": "com.mr.app",
+  "developerName": "DandanLLab",
+  "subtitle": "阅读 3.0 的 Flutter 六端兼容版，书源通用",
+  "localizedDescription": "阅读MR —— 阅读 3.0（legado）的社区重写版，基于 Flutter 支持 Android / iOS / 鸿蒙等六端。\n\n兼容阅读 3.0 的书源规则（CSS / JSONPath / XPath / JS + java.* 桥函数），可直接导入现有书源，支持小说、漫画、视频、音频等多媒体内容。\n\n本构建为未签名 IPA，需要 TrollStore 安装。",
+  "icon": "icons/com.mr.app.png",
+  "tintColor": "#1E1E36",
+  "category": "books",
+  "screenshots": [],
+  "appPermissions": {
+    "entitlements": [],
+    "privacy": {
+      "NSCameraUsageDescription": "MR 需要使用相机扫描二维码以导入书源",
+      "NSPhotoLibraryUsageDescription": "MR 需要访问相册以保存书籍封面和导出图片",
+      "NSMicrophoneUsageDescription": "MR 需要使用麦克风进行语音相关功能",
+      "NSLocalNetworkUsageDescription": "MR 需要访问本地网络以连接局域网内的书源服务器和 WebDAV"
+    }
+  },
+  "auto": {
+    "repo": "DandanLLab/mr",
+    "minOSVersion": "16.0",
+    "assetPattern": "mr_v(\\d+)_dev_[\\d-]+_ios\\.ipa",
+    "prerelease": true,
+    "versionPattern": "mr_v(\\d+)",
+    "history": 3,
+    "versionFromAsset": true
+  }
+}
