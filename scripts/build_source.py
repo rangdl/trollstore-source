@@ -250,13 +250,39 @@ def versions_from_release(app: dict, token: str | None) -> list[dict]:
     if auto.get("tag"):
         release = release_for(app, token)
         assets = assets_matching(app, release)
-        if not assets:
-            available = ", ".join(a["name"] for a in release.get("assets") or []) or "(none)"
-            fail(
-                f"{app['name']}: no matching asset in {auto['repo']} "
-                f"{release.get('tag_name')} — available: {available}"
+        if assets:
+            entries = [version_entry(app, release, asset) for asset in assets[:history]]
+        else:
+            # Upstream rolling releases are sometimes emptied mid-publish
+            # (old assets deleted, new ones not yet uploaded). Fall back to
+            # the most recent release that still carries a matching asset.
+            print(
+                f"warn: {app['name']}: no matching asset in {auto['repo']} "
+                f"{release.get('tag_name')} — falling back to older releases",
+                file=sys.stderr,
             )
-        entries = [version_entry(app, release, asset) for asset in assets[:history]]
+            releases = github_get(
+                f"repos/{auto['repo']}/releases?per_page={history * 3}", token
+            )
+            if not isinstance(releases, list):
+                fail(f"{app['name']}: expected a release list for {auto['repo']}")
+            allow_prerelease = auto.get("prerelease", False)
+            for fallback in releases:
+                if fallback.get("draft"):
+                    continue
+                if fallback.get("prerelease") and not allow_prerelease:
+                    continue
+                matching = assets_matching(app, fallback)
+                if matching:
+                    entries.append(version_entry(app, fallback, matching[0]))
+                if len(entries) >= history:
+                    break
+            if not entries:
+                available = ", ".join(a["name"] for a in release.get("assets") or []) or "(none)"
+                fail(
+                    f"{app['name']}: no matching asset in {auto['repo']} "
+                    f"{release.get('tag_name')} or any other release — available: {available}"
+                )
     else:
         releases = github_get(
             f"repos/{auto['repo']}/releases?per_page={history * 3}", token
