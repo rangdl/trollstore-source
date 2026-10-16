@@ -156,6 +156,14 @@
       "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.tingreader.client.png",
       "versions": [
         {
+          "version": "1.4.4",
+          "date": "2026-10-16",
+          "downloadURL": "https://gh-proxy.com/https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.4.4/TingReader-ios-self-sign.ipa",
+          "size": 14655276,
+          "minOSVersion": "15.0",
+          "localizedDescription": "修复与优化\n· Android 通知打断恢复：修复关闭“与其他应用同时播放”后，频繁收到通知声音可能导致有声书暂停后无法自动继续的问题。\n· 播放控制：改善连续音频打断时的暂停与恢复顺序，避免旧的恢复请求干扰后续播放；手动暂停后不会因迟到的焦点恢复事件意外续播。\n· 飞牛 Docker 版登录：FNID 登录支持 Docker FPK 的统一网关入口，优先连接原生版入口，不可用时自动尝试 Docker 版；重连时保留实际可用的入口。"
+        },
+        {
           "version": "1.4.3",
           "date": "2026-10-16",
           "downloadURL": "https://gh-proxy.com/https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.4.3/TingReader-ios-self-sign.ipa",
@@ -170,14 +178,6 @@
           "size": 14581569,
           "minOSVersion": "15.0",
           "localizedDescription": "修复与优化\n· 转码播放时长与进度：修复 Android 播放 WMA 等需要转码的音频时，总时长显示错误、应用和系统通知栏进度条提前走满但声音仍继续播放的问题。\n· 转码进度同步：修复暂停、缓冲、调整倍速及跳转后播放进度不准确的问题。\n· 转码音频连播：修复普通登录下 WMA 等转码音频播放结束后无法自动进入下一集的问题，并避免手动暂停或跳转后意外切换章节。\n· 飞牛通知栏封面：修复飞牛登录时系统通知栏可能无法显示服务器本地封面的问题。"
-        },
-        {
-          "version": "1.4.1",
-          "date": "2026-10-04",
-          "downloadURL": "https://gh-proxy.com/https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.4.1/TingReader-ios-self-sign.ipa",
-          "size": 14573740,
-          "minOSVersion": "15.0",
-          "localizedDescription": "✨ 新功能\n· 展示设置分项折叠：展示模式、排序方式、图标大小和封面形状分项展开；打开设置时全部收起，同时只展开一项。\n· 系列独立展示模式：系列详情支持切换网格和列表，展示模式独立保存，调整系列布局不会改变书架布局。\n\n🛠️ 修复与优化\n· 小窗封面：播放小窗和折叠小窗统一使用固定方形封面，不受书架封面形状设置影响。\n\n📦 升级提示\n· 建议同步更新服务端至 `2.0.3`，以使用 STRM 和 HLS 播放修复。"
         }
       ]
     }
