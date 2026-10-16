@@ -77,20 +77,20 @@
       "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.LX-YMusic.shuhao.png",
       "versions": [
         {
-          "version": "202610160415",
-          "date": "2026-10-16",
-          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610160415-ios-unsigned.ipa",
-          "size": 17858945,
+          "version": "20260827",
+          "date": "2026-08-27",
+          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/v20260827/LX-Y.Music-v20260827-ios-unsigned.ipa",
+          "size": 18720437,
           "minOSVersion": "14.0",
-          "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
+          "localizedDescription": "LX-Y Music 20260827"
         },
         {
-          "version": "202610160325",
-          "date": "2026-10-16",
-          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610160325-ios-unsigned.ipa",
-          "size": 17859386,
+          "version": "20260826",
+          "date": "2026-08-26",
+          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/v20260826/LX-Y.Music-v20260826-ios-unsigned.ipa",
+          "size": 18691238,
           "minOSVersion": "14.0",
-          "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
+          "localizedDescription": "LX-Y Music v20260826（正式版）\n\n未签名 IPA，需通过 AltStore / Sideloadly / TrollStore 等方式自签安装。\n\n主要更新（相较 v20260825）\n· 企鹅音乐歌单搜索修复：改走 SearchCgiService（search_type=3），修正返回字段映射，歌单可正常搜索与加载。\n· 音频焦点修复（两处）：\n· 关闭\"其他应用播放声音时自动暂停播放\"后，玩游戏或被其他应用不再被强制打断。\n· 开启该设置后，其他应用静音可自动恢复播放。\n· 开发者赞赏码（微信）：\n· 关于界面新增赞赏码。\n· 首次启动协议弹窗末尾新增「赞赏支持」区块（图片 + 引导文案），首次启动即可扫码赞赏。\n· README 顶部增加软件图标，底部联系方式改为 QQ 群 1013518794。\n· 播放进度条左/右拖动均有动效优化。\n\n校验信息\n· 构建来源：master @ 6faab7c4（首次启动弹窗加入赞赏码）\n· 文件：LX-Y.Music-v20260826-ios-unsigned.ipa\n· SHA-256: aad0dcce06c58eda6f3cfbf61e81944f2f1fa29657993f177737244d1e1115af\n· 已解包校验 `assets/src/resources/images/reward-qrcode.jpg` 进包，且 `main.jsbundle` 含引用。"
         }
       ]
     },
@@ -156,6 +156,14 @@
       "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.tingreader.client.png",
       "versions": [
         {
+          "version": "1.4.3",
+          "date": "2026-10-16",
+          "downloadURL": "https://gh-proxy.com/https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.4.3/TingReader-ios-self-sign.ipa",
+          "size": 14649406,
+          "minOSVersion": "15.0",
+          "localizedDescription": "新功能\n· 自动生成系列开关：本地和 WebDAV 存储库可设置是否按文件夹名生成系列，默认开启；关闭后保留已有系列，仍导入 `metadata.json` 中的系列信息。\n· 标题来源优先级：“文件/文件夹名”加入元数据来源优先级，默认排在最前，可上下调整；移除原来的独立标题开关。\n\n修复与优化\n· 书单界面：采用叠放封面，复用书架的封面尺寸和网格规则，适配手机、平板和桌面；列表名称与描述单行省略，详情页完整换行展示，精简搜索栏与操作按钮。\n· 书单加载：修复首次进入书单列表、详情页时过早读取页面状态的问题，避免页面退出后继续更新界面。\n· 手动刮削确认：展示数据库支持的字段，包括未变化和未刮到的内容，确认时可直接补全。\n· 书架信息：隐藏未知作者和演播的占位文字；网格卡片优先展示作者，没有作者时展示演播。\n· 书签界面：调整展开区域的空白、字体和字重，使其与其他页面保持一致。\n· 下载管理：完善下载暂停、取消及任务切换时的处理，减少重复请求和退出页面后的资源占用。\n· 错误提示：统一展示服务端返回的失败原因，改善书籍操作、插件、通知和任务出错时的反馈。\n\n升级提示\n· 新的存储库开关及标题来源优先级需要服务端 `2.0.6` 配合使用，建议同步升级。"
+        },
+        {
           "version": "1.4.2",
           "date": "2026-10-06",
           "downloadURL": "https://gh-proxy.com/https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.4.2/TingReader-ios-self-sign.ipa",
@@ -170,14 +178,6 @@
           "size": 14573740,
           "minOSVersion": "15.0",
           "localizedDescription": "✨ 新功能\n· 展示设置分项折叠：展示模式、排序方式、图标大小和封面形状分项展开；打开设置时全部收起，同时只展开一项。\n· 系列独立展示模式：系列详情支持切换网格和列表，展示模式独立保存，调整系列布局不会改变书架布局。\n\n🛠️ 修复与优化\n· 小窗封面：播放小窗和折叠小窗统一使用固定方形封面，不受书架封面形状设置影响。\n\n📦 升级提示\n· 建议同步更新服务端至 `2.0.3`，以使用 STRM 和 HLS 播放修复。"
-        },
-        {
-          "version": "1.4.0",
-          "date": "2026-10-02",
-          "downloadURL": "https://gh-proxy.com/https://github.com/dqsq2e2/ting-reader-flutter/releases/download/v1.4.0/TingReader-ios-self-sign.ipa",
-          "size": 14570418,
-          "minOSVersion": "15.0",
-          "localizedDescription": "1.4.0 - 2026-10-03\r\n\r\n🛠️ 修复与优化\r\n· 未知发布者安装确认：安装前展示插件名称、版本、运行类型、能力和完整请求权限，显示域名与路径范围，并突出敏感权限。\r\n· 插件包变化确认：安装确认携带服务端提供的包摘要，包发生变化时重新检查权限并确认。\r\n· 确认窗口布局：长权限列表可滚动，适配中英文及窄屏布局，零权限声明明确展示。"
         }
       ]
     }
