@@ -77,20 +77,20 @@
       "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/com.LX-YMusic.shuhao.png",
       "versions": [
         {
-          "version": "20260827",
-          "date": "2026-08-27",
-          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/v20260827/LX-Y.Music-v20260827-ios-unsigned.ipa",
-          "size": 18720437,
+          "version": "202610181555",
+          "date": "2026-10-18",
+          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v202610181555-ios-unsigned.ipa",
+          "size": 17859223,
           "minOSVersion": "14.0",
-          "localizedDescription": "LX-Y Music 20260827"
+          "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         },
         {
-          "version": "20260826",
-          "date": "2026-08-26",
-          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/v20260826/LX-Y.Music-v20260826-ios-unsigned.ipa",
-          "size": 18691238,
+          "version": "20261018",
+          "date": "2026-10-18",
+          "downloadURL": "https://gh-proxy.com/https://github.com/1970905901/LX-Y-Music-IOS/releases/download/latest/LX-Y.Music-v20261018-ios-unsigned.ipa",
+          "size": 18724211,
           "minOSVersion": "14.0",
-          "localizedDescription": "LX-Y Music v20260826（正式版）\n\n未签名 IPA，需通过 AltStore / Sideloadly / TrollStore 等方式自签安装。\n\n主要更新（相较 v20260825）\n· 企鹅音乐歌单搜索修复：改走 SearchCgiService（search_type=3），修正返回字段映射，歌单可正常搜索与加载。\n· 音频焦点修复（两处）：\n· 关闭\"其他应用播放声音时自动暂停播放\"后，玩游戏或被其他应用不再被强制打断。\n· 开启该设置后，其他应用静音可自动恢复播放。\n· 开发者赞赏码（微信）：\n· 关于界面新增赞赏码。\n· 首次启动协议弹窗末尾新增「赞赏支持」区块（图片 + 引导文案），首次启动即可扫码赞赏。\n· README 顶部增加软件图标，底部联系方式改为 QQ 群 1013518794。\n· 播放进度条左/右拖动均有动效优化。\n\n校验信息\n· 构建来源：master @ 6faab7c4（首次启动弹窗加入赞赏码）\n· 文件：LX-Y.Music-v20260826-ios-unsigned.ipa\n· SHA-256: aad0dcce06c58eda6f3cfbf61e81944f2f1fa29657993f177737244d1e1115af\n· 已解包校验 `assets/src/resources/images/reward-qrcode.jpg` 进包，且 `main.jsbundle` 含引用。"
+          "localizedDescription": "Automated unsigned IPA build from master @ f3c8a6446e4ad43e7f75e7d44045ed1453a638a7.\r\nBuilt on 33139183083 — do not use as a stable release."
         }
       ]
     },
