@@ -1,0 +1,22 @@
+{
+  "name": "柚子音乐",
+  "bundleIdentifier": "io.github.rangdl.pomelo",
+  "developerName": "rangdl",
+  "subtitle": "基于可插拔音源插件的跨平台音乐播放器",
+  "localizedDescription": "柚子音乐 Pomelo —— 基于可插拔音源插件的跨平台音乐播放器（Flutter）。\n\n支持本地与在线音乐播放、自定义音源插件、播放队列与多种播放模式，界面使用 Liquid Glass 玻璃质感设计，同一套代码覆盖 iOS / Android / Windows。\n\n本构建为未签名 IPA（由 GitHub Actions 从 tag 自动构建），需要 TrollStore 安装。",
+  "icon": "icons/io.github.rangdl.pomelo.png",
+  "tintColor": "#1E1E36",
+  "category": "music",
+  "screenshots": [],
+  "appPermissions": {
+    "entitlements": [],
+    "privacy": {}
+  },
+  "auto": {
+    "repo": "rangdl/pomelo",
+    "minOSVersion": "15.0",
+    "assetPattern": "pomelo-v(\\d+\\.\\d+\\.\\d+)-ios-unsigned\\.ipa",
+    "versionPattern": "^v?(\\d+\\.\\d+\\.\\d+)",
+    "history": 3
+  }
+}

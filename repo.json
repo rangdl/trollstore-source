@@ -7,6 +7,7 @@
   "tintColor": "#1E1E36",
   "website": "https://github.com/rangdl/trollstore-source",
   "featuredApps": [
+    "io.github.rangdl.pomelo",
     "app.codeg.ios"
   ]
 }

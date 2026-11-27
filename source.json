@@ -7,6 +7,7 @@
   "website": "https://github.com/rangdl/trollstore-source",
   "tintColor": "#1E1E36",
   "featuredApps": [
+    "io.github.rangdl.pomelo",
     "app.codeg.ios"
   ],
   "apps": [
@@ -178,6 +179,31 @@
           "size": 14649406,
           "minOSVersion": "15.0",
           "localizedDescription": "新功能\n· 自动生成系列开关：本地和 WebDAV 存储库可设置是否按文件夹名生成系列，默认开启；关闭后保留已有系列，仍导入 `metadata.json` 中的系列信息。\n· 标题来源优先级：“文件/文件夹名”加入元数据来源优先级，默认排在最前，可上下调整；移除原来的独立标题开关。\n\n修复与优化\n· 书单界面：采用叠放封面，复用书架的封面尺寸和网格规则，适配手机、平板和桌面；列表名称与描述单行省略，详情页完整换行展示，精简搜索栏与操作按钮。\n· 书单加载：修复首次进入书单列表、详情页时过早读取页面状态的问题，避免页面退出后继续更新界面。\n· 手动刮削确认：展示数据库支持的字段，包括未变化和未刮到的内容，确认时可直接补全。\n· 书架信息：隐藏未知作者和演播的占位文字；网格卡片优先展示作者，没有作者时展示演播。\n· 书签界面：调整展开区域的空白、字体和字重，使其与其他页面保持一致。\n· 下载管理：完善下载暂停、取消及任务切换时的处理，减少重复请求和退出页面后的资源占用。\n· 错误提示：统一展示服务端返回的失败原因，改善书籍操作、插件、通知和任务出错时的反馈。\n\n升级提示\n· 新的存储库开关及标题来源优先级需要服务端 `2.0.6` 配合使用，建议同步升级。"
+        }
+      ]
+    },
+    {
+      "name": "柚子音乐",
+      "bundleIdentifier": "io.github.rangdl.pomelo",
+      "developerName": "rangdl",
+      "subtitle": "基于可插拔音源插件的跨平台音乐播放器",
+      "localizedDescription": "柚子音乐 Pomelo —— 基于可插拔音源插件的跨平台音乐播放器（Flutter）。\n\n支持本地与在线音乐播放、自定义音源插件、播放队列与多种播放模式，界面使用 Liquid Glass 玻璃质感设计，同一套代码覆盖 iOS / Android / Windows。\n\n本构建为未签名 IPA（由 GitHub Actions 从 tag 自动构建），需要 TrollStore 安装。",
+      "tintColor": "#1E1E36",
+      "category": "music",
+      "screenshots": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/io.github.rangdl.pomelo.png",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "date": "2026-11-27",
+          "downloadURL": "https://github.com/rangdl/pomelo/releases/download/v0.1.0/pomelo-v0.1.0-ios-unsigned.ipa",
+          "size": 15976588,
+          "minOSVersion": "15.0",
+          "localizedDescription": "多平台构建产物：\n· Android：debug 签名 APK（可直接安装）\n· iOS：未签名 IPA（需自行签名后安装）\n· Windows：release 目录压缩包\n\nFull Changelog: https://github.com/rangdl/pomelo/commits/v0.1.0"
         }
       ]
     }
