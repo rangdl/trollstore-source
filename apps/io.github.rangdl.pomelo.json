@@ -15,7 +15,7 @@
   "auto": {
     "repo": "rangdl/pomelo",
     "minOSVersion": "15.0",
-    "assetPattern": "pomelo-v(\\d+\\.\\d+\\.\\d+)-ios-unsigned\\.ipa",
+    "assetPattern": "pomelo-ios-unsigned\\.ipa",
     "versionPattern": "^v?(\\d+\\.\\d+\\.\\d+)",
     "history": 3
   }

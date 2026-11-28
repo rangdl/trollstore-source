@@ -198,12 +198,12 @@
       "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/io.github.rangdl.pomelo.png",
       "versions": [
         {
-          "version": "0.1.0",
-          "date": "2026-11-27",
-          "downloadURL": "https://github.com/rangdl/pomelo/releases/download/v0.1.0/pomelo-v0.1.0-ios-unsigned.ipa",
-          "size": 15976588,
+          "version": "0.1.1",
+          "date": "2026-11-28",
+          "downloadURL": "https://github.com/rangdl/pomelo/releases/download/v0.1.1/pomelo-ios-unsigned.ipa",
+          "size": 15974312,
           "minOSVersion": "15.0",
-          "localizedDescription": "多平台构建产物：\n· Android：debug 签名 APK（可直接安装）\n· iOS：未签名 IPA（需自行签名后安装）\n· Windows：release 目录压缩包\n\nFull Changelog: https://github.com/rangdl/pomelo/commits/v0.1.0"
+          "localizedDescription": "多平台构建产物：\n· Android：debug 签名 APK（可直接安装）\n· iOS：未签名 IPA（需自行签名后安装）\n· Windows：release 目录压缩包\n\nFull Changelog: https://github.com/rangdl/pomelo/compare/v0.1.0...v0.1.1"
         }
       ]
     }
