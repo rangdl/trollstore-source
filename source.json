@@ -198,6 +198,14 @@
       "iconURL": "https://raw.githubusercontent.com/rangdl/trollstore-source/main/icons/io.github.rangdl.pomelo.png",
       "versions": [
         {
+          "version": "0.1.6",
+          "date": "2026-11-28",
+          "downloadURL": "https://github.com/rangdl/pomelo/releases/download/v0.1.6/pomelo-ios-unsigned.ipa",
+          "size": 16038734,
+          "minOSVersion": "15.0",
+          "localizedDescription": "多平台构建产物：\n· Android：debug 签名 APK（可直接安装）\n· iOS：未签名 IPA（需自行签名后安装）\n· Windows：release 目录压缩包\n\nFull Changelog: https://github.com/rangdl/pomelo/compare/v0.1.5...v0.1.6"
+        },
+        {
           "version": "0.1.5",
           "date": "2026-11-28",
           "downloadURL": "https://github.com/rangdl/pomelo/releases/download/v0.1.5/pomelo-ios-unsigned.ipa",
@@ -212,14 +220,6 @@
           "size": 15981929,
           "minOSVersion": "15.0",
           "localizedDescription": "多平台构建产物：\n· Android：debug 签名 APK（可直接安装）\n· iOS：未签名 IPA（需自行签名后安装）\n· Windows：release 目录压缩包\n\nFull Changelog: https://github.com/rangdl/pomelo/compare/v0.1.3...v0.1.4"
-        },
-        {
-          "version": "0.1.3",
-          "date": "2026-11-28",
-          "downloadURL": "https://github.com/rangdl/pomelo/releases/download/v0.1.3/pomelo-ios-unsigned.ipa",
-          "size": 15981288,
-          "minOSVersion": "15.0",
-          "localizedDescription": "多平台构建产物：\n· Android：debug 签名 APK（可直接安装）\n· iOS：未签名 IPA（需自行签名后安装）\n· Windows：release 目录压缩包\n\nFull Changelog: https://github.com/rangdl/pomelo/compare/v0.1.2...v0.1.3"
         }
       ]
     }
